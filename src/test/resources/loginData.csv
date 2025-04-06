@@ -1,0 +1,4 @@
+testCaseName,username,password
+testLoginStandard,standard_user,secret_sauce
+testLoginLockedOut,locked_out_user,secret_sauce
+testLoginProblemUser,problem_user,secret_sauce
