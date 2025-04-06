@@ -12,7 +12,7 @@ public class TestDataProvider {
     @DataProvider(name = "csvLoginData")
     public static Object[][] getLoginDataFromCSV(Method method) {
         String path = System.getProperty("user.dir")+ File.separator +"src"+File.separator+"test"+File.separator+"resources"+File.separator+ "loginData.csv";
-        String testName = method.getName();  // test method ka naam fetch karo
+        String testName = method.getName();
         List<LoginData> matchedData = CSVUtils.readCSV(path, testName);
 
         Object[][] data = new Object[matchedData.size()][1];

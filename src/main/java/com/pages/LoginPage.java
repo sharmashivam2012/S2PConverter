@@ -1,40 +1,68 @@
 package com.pages;
 
-import com.s2p.PageInitialize;
 import com.utilities.Utils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * Page Object Model class representing the login page of the application.
+ * Provides methods to interact with username, password fields, and login button.
+ */
 public class LoginPage {
     Utils util;
     public LoginPage() {
         util = new Utils();
-        // initialize all elements
     }
 
-    // Elements using @FindBy
+
+    /**
+     * Username input field.
+     */
     @FindBy(id = "user-name")
     WebElement username;
 
+    /**
+     * Password input field.
+     */
     @FindBy(id = "password")
     WebElement password;
 
+    /**
+     * Login button element.
+     */
     @FindBy(id = "login-button")
     WebElement loginButton;
 
-    // Actions
-    public void enterUsername(String user) {
+
+    /**
+     * Enters the given username into the username field.
+     *
+     * @param user The username to be entered.
+     * @return The current instance of LoginPage.
+     */
+    public LoginPage enterUsername(String user) {
         util.enterText(username,user);
-      //  username.sendKeys(user);
+      return this;
     }
 
-    public void enterPassword(String pass) {
+    /**
+     * Enters the given password into the password field.
+     *
+     * @param pass The password to be entered.
+     * @return The current instance of LoginPage.
+     */
+    public LoginPage enterPassword(String pass) {
         util.enterText(password,pass);
-    //    password.sendKeys(pass);
+        return this;
     }
 
-    public void clickLogin() {
+    /**
+     * Clicks the login button and navigates to the HomePage.
+     *
+     * @return A new instance of HomePage.
+     */
+    public HomePage clickLogin() {
         util.clickElement(loginButton);
-     //   loginButton.click();
+        return new HomePage();
     }
 }
