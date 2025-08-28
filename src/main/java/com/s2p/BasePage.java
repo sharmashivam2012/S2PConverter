@@ -20,11 +20,11 @@ public class BasePage {
      * Ensures proper cleanup of driver resources.
      */
     public void quitBrowser(){
-        if(TC.get().driver !=null){
+        if(TC.get().driver != null){
             TC.get().driver.quit();
+            TC.get().driver = null;
         }
-
-        TC.get().driver.quit();
     }
 
 }
+
